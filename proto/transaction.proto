@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package transaction;
+
+service TransactionService {
+  rpc StreamTransactions (StreamTransactionsRequest) returns (stream TransactionResponse);
+}
+
+message StreamTransactionsRequest {
+
+}
+
+message TransactionResponse {
+  string transaction_json = 1;
+  uint64 timestamp = 2;
+}
